@@ -1,3 +1,11 @@
+# Setup do projeto
+
+- [x] Setup do banco de dados (postgreSQL)
+- [] Seeding do banco (colocar dados)
+- [] Introdução ao Next.js
+- [] Tailwind e Shadcn
+- [] Git Hooks
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
