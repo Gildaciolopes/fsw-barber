@@ -1,7 +1,7 @@
 # Setup do projeto
 
 - [x] Setup do banco de dados (postgreSQL)
-- [] Seeding do banco (colocar dados)
+- [x] Seeding do banco (colocar dados)
 - [] Introdução ao Next.js
 - [] Tailwind e Shadcn
 - [] Git Hooks
