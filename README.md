@@ -6,6 +6,15 @@
 - [x] Tailwind e Shadcn
 - [x] Git Hooks
 
+# Tela Inicial
+
+- [x] Criar componente de header
+- [x] Criar um Menu com Buscas Rápidas
+- [x] Adicionar um banner
+- [x] Mostrar agendamentos
+- [x] Mostrar barbearias recomendadas e populares
+- [x] Adicionar um footer
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
