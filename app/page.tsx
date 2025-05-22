@@ -3,7 +3,6 @@ import Header from "./_components/header"
 import { Button } from "./_components/ui/button"
 import { SearchIcon } from "lucide-react"
 import Image from "next/image"
-import { Card, CardContent } from "./_components/ui/card"
 import { db } from "./_lib/prisma"
 import BarbershopItem from "./_components/barbershop-item"
 import { quickSearchOptions } from "./_constants/search"
@@ -79,21 +78,6 @@ const Home = async () => {
           ))}
         </div>
       </div>
-
-      <footer>
-        <Card className="rounded-none rounded-tl-xl rounded-tr-xl">
-          <CardContent className="px-5 py-6 text-center">
-            <p className="text-sm text-gray-400">
-              Desenvolvido por{" "}
-              <span className="font-bold text-[#B253FF] hover:cursor-pointer">
-                <a href="https://gildaciolopes.netlify.app/" target="_blank">
-                  Gildácio Lopes
-                </a>
-              </span>
-            </p>
-          </CardContent>
-        </Card>
-      </footer>
     </div>
   )
 }
