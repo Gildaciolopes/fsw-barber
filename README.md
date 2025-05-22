@@ -20,8 +20,8 @@
 - [x] Imagem da Barbearia, com botões de ações
 - [x] Mostrar informações da Barbearia
 - [x] Mostrar avaliações
-- [] Mostrar descrição da Barbearia
-- [] Mostrar serviços
+- [x] Mostrar descrição da Barbearia
+- [ ] Mostrar serviços
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
