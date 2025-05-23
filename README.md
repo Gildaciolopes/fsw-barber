@@ -1,3 +1,17 @@
+# Saas de Agendamentos para Barbearias - FSW Barber
+
+Meu objetivo é criar uma aplicação web que permita agendar serviços de várias barbearias de forma simples e eficiente, facilitando a vida dos clientes e dos barbeiros.
+
+# Tecnologias utilizadas
+
+- TypeScript
+- Node.js
+- React
+- Next.js
+- PostgreSQL e Prisma
+- TailwindCSS e Shadcn
+- Git Hooks
+
 # Setup do projeto
 
 - [x] Setup do banco de dados (postgreSQL)
@@ -14,6 +28,7 @@
 - [x] Mostrar agendamentos
 - [x] Mostrar barbearias recomendadas e populares
 - [x] Adicionar um footer
+- [x] Adicionar um menu lateral
 
 # Detalhes da Barbearia
 
