@@ -71,7 +71,7 @@ Meu objetivo é criar uma aplicação web que permita agendar serviços de vári
 
    </div>
 
-   Autor: [Gildácio Lopes](https://www.linkedin.com/in/gildaciolopes/)
+   Autor: [Gildácio Lopes](https://github.com/Gildaciolopes)
 
 # Fluxograma de Desenvolvimento:
 
