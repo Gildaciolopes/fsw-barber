@@ -12,7 +12,7 @@ Meu objetivo é criar uma aplicação web que permita agendar serviços de vári
 
 <div>
 
-## 🚀 Funcionalidades <br/>
+## 🚀 Funcionalidades
 
 - 🔍 **Pesquisa de Barbearias**: Encontre rapidamente barbearias próximas e populares. <br/>
 - 🗓️ **Agendamento de Serviços**: Reserve cortes de cabelo, barba e outros serviços com facilidade. <br/>
@@ -23,7 +23,7 @@ Meu objetivo é criar uma aplicação web que permita agendar serviços de vári
 
 <br/>
 
-## 🛠️ Tecnologias Utilizadas <br/>
+## 🛠️ Tecnologias Utilizadas
 
 - 💻 **Frontend**: TypeScript, React, Next.js, Tailwind CSS e Shadcn <br/>
 - 🗄️ **Backend**: Node.js, Prisma, PostgreSQL <br/>
@@ -32,7 +32,7 @@ Meu objetivo é criar uma aplicação web que permita agendar serviços de vári
 
 <br/>
 
-## 🔧 Configuração do Projeto <br/>
+## 🔧 Configuração do Projeto
 
 1. 🔄 **Clone este repositório**:
    ```bash
@@ -67,7 +67,7 @@ Meu objetivo é criar uma aplicação web que permita agendar serviços de vári
    npm run dev
    ```
 
-   <br/><br/>
+   <br/>
 
    </div>
 
