@@ -1,18 +1,81 @@
-# Saas de Agendamentos para Barbearias - FSW Barber
+<div>
 
-Meu objetivo é criar uma aplicação web que permita agendar serviços de várias barbearias de forma simples e eficiente, facilitando a vida dos clientes e dos barbeiros.
+# ✂️ Saas de Agendamentos para Barbearias - FSW Barber
 
-# Tecnologias utilizadas
+Meu objetivo é criar uma aplicação web que permita agendar serviços de várias barbearias de forma simples e eficiente, facilitando a vida dos clientes e dos barbeiros. O sistema permite que os usuários encontrem barbearias, visualizem serviços disponíveis, façam reservas e gerenciem seus agendamentos diretamente do celular.
 
-- TypeScript
-- Node.js
-- React
-- Next.js
-- PostgreSQL e Prisma
-- TailwindCSS e Shadcn
-- Git Hooks
+- O Website está disponível em `EM BREVE`.
 
-# Setup do projeto
+<br/>
+
+</div>
+
+<div>
+
+## 🚀 Funcionalidades <br/>
+
+- 🔍 **Pesquisa de Barbearias**: Encontre rapidamente barbearias próximas e populares. <br/>
+- 🗓️ **Agendamento de Serviços**: Reserve cortes de cabelo, barba e outros serviços com facilidade. <br/>
+- 🔐 **Autenticação com Google**: Login seguro e rápido utilizando sua conta Google, integrado com **NextAuth**. <br/>
+- 📅 **Gerenciamento de Agendamentos**: Visualize e cancele seus agendamentos diretamente na plataforma. <br/>
+- 📱 **Interface Responsiva**: Design otimizado para dispositivos móveis, utilizando **Tailwind CSS**. <br/>
+- 🛠️ **Sistema de Reservas**: Backend robusto com **Prisma** e **PostgreSQL** para gerenciar dados de usuários e reservas.
+
+<br/>
+
+## 🛠️ Tecnologias Utilizadas <br/>
+
+- 💻 **Frontend**: TypeScript, React, Next.js, Tailwind CSS e Shadcn <br/>
+- 🗄️ **Backend**: Node.js, Prisma, PostgreSQL <br/>
+- 🔑 **Autenticação**: NextAuth <br/>
+- 🛠️ **Bibliotecas Adicionais**: Lucide-react, Date-fns e Git Hooks
+
+<br/>
+
+## 🔧 Configuração do Projeto <br/>
+
+1. 🔄 **Clone este repositório**:
+   ```bash
+   git clone https://github.com/gildaciolopes/fsw-barber.git
+   ```
+2. 📦 **Instale as dependências**:
+   ```bash
+   npm install
+   ```
+3. 🔑 **Configure as variáveis de ambiente**:
+
+   - Crie um arquivo `.env.local` no diretório raiz do projeto com as seguintes variáveis:
+
+   ```env
+   DATABASE_URL="postgresql://user:password@localhost:5432/database_name?schema=public"
+   GOOGLE_CLIENT_ID="your_google_client_id"
+   GOOGLE_CLIENT_SECRET="your_google_client_secret"
+   ```
+
+   - Substitua `your_google_client_id` e `your_google_client_secret` pelos valores fornecidos pelo Google.
+   - Substitua `user`, `password`, `database_name` e `schema` pelos valores apropriados para o seu banco de dados.
+
+4. 🔑 **Execute as migrações do banco de dados:**:
+
+   ```bash
+   npx prisma migrate dev
+   ```
+
+5. 🚀 **Inicie o servidor de desenvolvimento**:
+
+   ```bash
+   npm run dev
+   ```
+
+   <br/><br/>
+
+   </div>
+
+   Autor: [Gildácio Lopes](https://www.linkedin.com/in/gildaciolopes/)
+
+# Fluxograma de Desenvolvimento:
+
+## Setup do projeto
 
 - [x] Setup do banco de dados (postgreSQL)
 - [x] Seeding do banco (colocar dados)
@@ -20,7 +83,7 @@ Meu objetivo é criar uma aplicação web que permita agendar serviços de vári
 - [x] Tailwind e Shadcn
 - [x] Git Hooks
 
-# Tela Inicial
+## Tela Inicial
 
 - [x] Criar componente de header
 - [x] Criar um Menu com Buscas Rápidas
@@ -30,47 +93,10 @@ Meu objetivo é criar uma aplicação web que permita agendar serviços de vári
 - [x] Adicionar um footer
 - [x] Adicionar um menu lateral
 
-# Detalhes da Barbearia
+## Detalhes da Barbearia
 
 - [x] Imagem da Barbearia, com botões de ações
 - [x] Mostrar informações da Barbearia
 - [x] Mostrar avaliações
 - [x] Mostrar descrição da Barbearia
 - [x] Mostrar serviços
-
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
