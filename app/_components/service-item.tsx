@@ -124,8 +124,6 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
       })
       await createBooking({
         serviceId: service.id,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        userId: (data?.user as any).id,
         date: newDate,
       })
       handleBookingSheetOpenChange()
