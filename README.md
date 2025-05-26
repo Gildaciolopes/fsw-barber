@@ -105,3 +105,10 @@ Meu objetivo é criar uma aplicação web que permita agendar serviços de vári
 
 - [x] Tornar possivel o login com Google (NextAuth)
 - [x] Adicionar um botão de login no menu lateral
+
+## Reserva com Barbeiro
+
+- [x] Criar um modal de reserva
+- [x] Mostrar os horários disponíveis
+- [x] Mostrar os serviços disponíveis
+- [x] Autenticar o usuário
