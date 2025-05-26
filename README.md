@@ -100,3 +100,8 @@ Meu objetivo é criar uma aplicação web que permita agendar serviços de vári
 - [x] Mostrar avaliações
 - [x] Mostrar descrição da Barbearia
 - [x] Mostrar serviços
+
+## Login com Google
+
+- [x] Tornar possivel o login com Google (NextAuth)
+- [x] Adicionar um botão de login no menu lateral
