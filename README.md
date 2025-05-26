@@ -112,3 +112,9 @@ Meu objetivo é criar uma aplicação web que permita agendar serviços de vári
 - [x] Mostrar os horários disponíveis
 - [x] Mostrar os serviços disponíveis
 - [x] Autenticar o usuário
+
+## Tela de Agendamentos
+
+- [x] Mostrar os agendamentos do usuário
+- [x] Mostrar os detalhes do agendamento
+- [x] Cancelar um agendamento
