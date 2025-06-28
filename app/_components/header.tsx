@@ -8,8 +8,8 @@ import Link from "next/link"
 
 const Header = () => {
   return (
-    <Card className="rounded-none rounded-bl-xl rounded-br-xl">
-      <CardContent className="flex flex-row items-center justify-between p-5">
+    <Card className="w-full rounded-none rounded-bl-xl rounded-br-xl">
+      <CardContent className="mx-auto flex max-w-[1200px] flex-row items-center justify-between p-5">
         <Link href="/">
           <Image alt="FSW Barber" src="/Logo.svg" height={18} width={120} />
         </Link>

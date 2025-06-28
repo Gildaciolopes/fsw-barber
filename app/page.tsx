@@ -28,7 +28,7 @@ const Home = async () => {
     <div>
       {/* header */}
       <Header />
-      <div className="p-5">
+      <div className="mx-auto max-w-[1200px] p-5">
         {/* TEXTO */}
         <h2 className="text-xl font-bold">
           Olá, {session?.user ? session.user.name : "bem vindo"}!
@@ -71,7 +71,7 @@ const Home = async () => {
         </div>
 
         {/* BANNER */}
-        <div className="relative mt-6 h-[150px] w-full">
+        <div className="relative mt-6 h-[135px] w-full object-fill sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[420px]">
           <Image
             src="/banner-01.svg"
             alt="Agende nos melhores com FSW Barber"
@@ -101,7 +101,7 @@ const Home = async () => {
         <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
           Recomendados
         </h2>
-        <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-3 overflow-auto lg:grid lg:grid-cols-4 lg:flex-wrap [&::-webkit-scrollbar]:hidden">
           {barbershops.map((barbershop) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
@@ -110,7 +110,7 @@ const Home = async () => {
         <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
           Populares
         </h2>
-        <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-3 overflow-auto lg:grid lg:grid-cols-4 lg:flex-wrap [&::-webkit-scrollbar]:hidden">
           {popularBarbershops.map((barbershop) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}

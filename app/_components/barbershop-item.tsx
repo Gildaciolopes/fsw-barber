@@ -15,7 +15,7 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
     <Card className="min-w-[167px] rounded-2xl">
       <CardContent className="p-0 px-1 pt-1">
         {/* IMAGEM */}
-        <div className="relative h-[159px] w-full">
+        <div className="relative h-[150px] w-full">
           <Image
             alt={barbershop.name}
             fill
