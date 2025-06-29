@@ -31,20 +31,27 @@ const Search = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(handleSubmit)} className="flex gap-2">
+      <form
+        onSubmit={form.handleSubmit(handleSubmit)}
+        className="flex items-center gap-2"
+      >
         <FormField
           control={form.control}
           name="title"
           render={({ field }) => (
             <FormItem className="w-full">
               <FormControl>
-                <Input placeholder="Pesquisar" {...field} className="w-full" />
+                <Input
+                  placeholder="Pesquisar"
+                  {...field}
+                  className="w-full lg:p-5 lg:text-base"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">
+        <Button className="hover:cursor-pointer lg:p-5" type="submit">
           <SearchIcon />
         </Button>
       </form>

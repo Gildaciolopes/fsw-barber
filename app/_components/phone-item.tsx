@@ -19,11 +19,12 @@ const PhoneItem = ({ phone }: PhoneItemProps) => {
       {/* ESQUERDA */}
       <div className="flex items-center gap-2">
         <SmartphoneIcon />
-        <p className="text-sm">{phone}</p>
+        <p className="text-sm lg:text-base">{phone}</p>
       </div>
 
       {/* DIREITA */}
       <Button
+        className="text-sm lg:text-base"
         variant="outline"
         size="sm"
         onClick={() => handleCopyPhoneClick(phone)}

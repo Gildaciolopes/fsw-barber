@@ -76,11 +76,15 @@ const BookingItem = ({ booking }: BookingItemProps) => {
                 <Avatar className="h-6 w-6">
                   <AvatarImage src={booking.service.barbershop.imageUrl} />
                 </Avatar>
-                <p className="text-sm">{booking.service.barbershop.name}</p>
+                <p className="text-sm lg:text-base">
+                  {booking.service.barbershop.name}
+                </p>
               </div>
-              <h3 className="mr-5 font-semibold">{booking.service.name}</h3>
+              <h3 className="ml-8 text-start text-sm font-semibold lg:text-base">
+                {booking.service.name}
+              </h3>
               <Badge
-                className="ml-7 w-fit"
+                className="ml-7 w-fit text-xs lg:text-sm"
                 variant={isConfirmed ? "default" : "secondary"}
               >
                 {isConfirmed ? "Confirmado" : "Finalizado"}

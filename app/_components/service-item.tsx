@@ -166,7 +166,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
       <Card>
         <CardContent className="flex items-center gap-3 p-2">
           {/* IMAGE */}
-          <div className="relative max-h-[110px] min-h-[110px] min-w-[110px] max-w-[110px]">
+          <div className="relative mb-2 max-h-[110px] min-h-[110px] min-w-[110px] max-w-[110px]">
             <Image
               alt={service.name}
               src={service.imageUrl}
@@ -202,14 +202,14 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                 >
                   Reservar
                 </Button>
-                <SheetContent className="px-0">
+                <SheetContent className="w-[250px] px-0 sm:w-[320px] md:w-[400px]">
                   <SheetHeader>
                     <SheetTitle className="text-center">
                       Fazer Reserva
                     </SheetTitle>
                   </SheetHeader>
 
-                  <div className="border-b border-solid py-5">
+                  <div className="border-b border-solid py-5 lg:py-1">
                     <Calendar
                       className="flex justify-center"
                       mode="single"
@@ -253,7 +253,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                   </div>
 
                   {selectedDay && (
-                    <div className="flex gap-3 overflow-x-auto border-b border-solid p-5 [&::-webkit-scrollbar]:hidden">
+                    <div className="flex gap-3 overflow-x-auto border-b border-solid px-5 py-3 lg:max-h-[320px] lg:flex-wrap [&::-webkit-scrollbar]:hidden">
                       {timeList.length > 0 ? (
                         timeList.map((time) => (
                           <Button
@@ -276,7 +276,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                   )}
 
                   {selectedDate && (
-                    <div className="p-5">
+                    <div className="px-4 py-2">
                       <BookingSummary
                         barbershop={barbershop}
                         service={service}
@@ -284,7 +284,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                       />
                     </div>
                   )}
-                  <SheetFooter className="mt-5 px-5">
+                  <SheetFooter className="mt-1 px-4">
                     <Button
                       className="w-full"
                       onClick={handleCreateBooking}

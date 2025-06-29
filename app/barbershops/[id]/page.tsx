@@ -70,23 +70,29 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
         <h1 className="mb-3 text-xl font-bold">{barbershop.name}</h1>
         <div className="mb-2 flex items-center gap-2">
           <MapPinIcon className="text-primary" size={18} />
-          <p className="text-sm">{barbershop?.address}</p>
+          <p className="text-sm lg:text-base">{barbershop?.address}</p>
         </div>
 
         <div className="flex items-center gap-2">
           <StarIcon className="fill-primary text-primary" size={18} />
-          <p className="text-sm">5,0 (499 avaliações)</p>
+          <p className="text-sm lg:text-base">5,0 (499 avaliações)</p>
         </div>
       </div>
 
       {/* DESCRIÇÃO */}
       <div className="space-y-2 border-b border-solid p-5">
-        <h2 className="text-xs font-bold uppercase text-gray-400">Sobre nós</h2>
-        <p className="text-justify text-sm">{barbershop?.description}</p>
+        <h2 className="text-xs font-bold uppercase text-gray-400 lg:text-sm">
+          Sobre nós
+        </h2>
+        <p className="text-justify text-sm lg:text-base">
+          {barbershop?.description}
+        </p>
       </div>
 
       <div className="space-y-3 border-b border-solid p-5">
-        <h2 className="text-xs font-bold uppercase text-gray-400">Serviços</h2>
+        <h2 className="text-xs font-bold uppercase text-gray-400 lg:text-sm">
+          Serviços
+        </h2>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {barbershop.services.map((service) => (
             <ServiceItem

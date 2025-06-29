@@ -30,10 +30,10 @@ const Home = async () => {
       <Header />
       <div className="mx-auto max-w-[1200px] p-5">
         {/* TEXTO */}
-        <h2 className="text-xl font-bold">
+        <h2 className="text-xl font-bold lg:text-2xl">
           Olá, {session?.user ? session.user.name : "bem vindo"}!
         </h2>
-        <p>
+        <p className="text-base lg:text-lg">
           <span className="capitalize">
             {format(new Date(), "EEEE, dd", { locale: ptBR })}
           </span>
@@ -52,7 +52,7 @@ const Home = async () => {
         <div className="mt-6 flex gap-3 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
           {quickSearchOptions.map((option) => (
             <Button
-              className="gap-2"
+              className="gap-2 text-sm lg:text-base"
               variant="secondary"
               key={option.title}
               asChild
@@ -82,7 +82,7 @@ const Home = async () => {
 
         {confirmedBookings.length > 0 && (
           <>
-            <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+            <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400 lg:text-sm">
               Agendamentos
             </h2>
 
@@ -98,7 +98,7 @@ const Home = async () => {
           </>
         )}
 
-        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400 lg:text-sm">
           Recomendados
         </h2>
         <div className="flex gap-3 overflow-auto lg:grid lg:grid-cols-4 lg:flex-wrap [&::-webkit-scrollbar]:hidden">
@@ -107,7 +107,7 @@ const Home = async () => {
           ))}
         </div>
 
-        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400 lg:text-sm">
           Populares
         </h2>
         <div className="flex gap-3 overflow-auto lg:grid lg:grid-cols-4 lg:flex-wrap [&::-webkit-scrollbar]:hidden">
