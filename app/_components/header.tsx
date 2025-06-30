@@ -13,7 +13,7 @@ const Header = () => {
     <Card className="w-full rounded-none rounded-bl-xl rounded-br-xl">
       <CardContent className="mx-auto flex max-w-[1200px] flex-row items-center justify-between p-5">
         <Link href="/">
-          <Image src="/logo.svg" alt="FSW Barber" width={120} height={18} />
+          <Image src="/Logo.svg" alt="FSW Barber" width={120} height={18} />
         </Link>
 
         <div className="flex items-center gap-1">

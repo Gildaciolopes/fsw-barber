@@ -218,7 +218,7 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
           <div className="hidden items-center justify-between py-11 pb-5 lg:flex">
             <p className="text-sm">Em parceria com</p>
 
-            <Image alt="FSW Barber" src="/logo.svg" width={120} height={18} />
+            <Image alt="FSW Barber" src="/Logo.svg" width={120} height={18} />
           </div>
         </div>
       </div>
