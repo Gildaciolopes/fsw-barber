@@ -21,8 +21,15 @@ import { toast } from "sonner"
 import { getBookings } from "../_actions/get-bookings"
 import { Dialog, DialogContent } from "./ui/dialog"
 import SignInDialog from "./sign-in-dialog"
-import BookingSummary from "./booking-summary"
 import { useRouter } from "next/navigation"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel"
+import BookingSummary from "./booking-summary"
 
 interface ServiceItemProps {
   service: BarbershopService
@@ -253,26 +260,36 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                   </div>
 
                   {selectedDay && (
-                    <div className="flex gap-3 overflow-x-auto border-b border-solid px-5 py-3 lg:max-h-[320px] lg:flex-wrap [&::-webkit-scrollbar]:hidden">
-                      {timeList.length > 0 ? (
-                        timeList.map((time) => (
-                          <Button
-                            key={time}
-                            variant={
-                              selectedTime === time ? "default" : "outline"
-                            }
-                            className="rounded-full"
-                            onClick={() => handleTimeSelect(time)}
-                          >
-                            {time}
-                          </Button>
-                        ))
-                      ) : (
-                        <p className="text-xs">
-                          Não há horários disponíveis para este dia.
-                        </p>
-                      )}
-                    </div>
+                    <Carousel className="p-5">
+                      <CarouselContent className="gap-1">
+                        {timeList.length > 0 ? (
+                          timeList.map((time) => (
+                            <CarouselItem
+                              key={time}
+                              className="basis-1/3 sm:basis-1/4 md:basis-1/5 lg:basis-1/5"
+                            >
+                              <Button
+                                variant={
+                                  selectedTime === time ? "default" : "outline"
+                                }
+                                className="rounded-full"
+                                onClick={() => handleTimeSelect(time)}
+                              >
+                                {time}
+                              </Button>
+                            </CarouselItem>
+                          ))
+                        ) : (
+                          <CarouselItem>
+                            <p className="text-xs">
+                              Não há horários disponíveis para este dia.
+                            </p>
+                          </CarouselItem>
+                        )}
+                      </CarouselContent>
+                      <CarouselPrevious />
+                      <CarouselNext />
+                    </Carousel>
                   )}
 
                   {selectedDate && (
