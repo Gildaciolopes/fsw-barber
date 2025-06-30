@@ -1,27 +1,32 @@
 import Image from "next/image"
-import { Card, CardContent } from "./ui/card"
-import { Button } from "./ui/button"
 import { MenuIcon } from "lucide-react"
-import { Sheet, SheetTrigger } from "./ui/sheet"
-import SidebarSheet from "./sidebar-sheet"
 import Link from "next/link"
+
+import { Card, CardContent } from "./ui/card"
+import SidebarSheet from "./sidebar-sheet"
+import { Sheet, SheetTrigger } from "./ui/sheet"
+import { Button } from "./ui/button"
+import { Navbar } from "./navbar"
 
 const Header = () => {
   return (
-    <Card className="w-full rounded-none rounded-bl-xl rounded-br-xl">
-      <CardContent className="mx-auto flex max-w-[1200px] flex-row items-center justify-between p-5">
+    <Card>
+      <CardContent className="flex flex-row items-center justify-between p-5 lg:m-auto lg:w-[1146px] lg:max-w-[94%] lg:p-7 lg:px-0">
         <Link href="/">
-          <Image alt="FSW Barber" src="/Logo.svg" height={18} width={120} />
+          <Image src="/logo.svg" alt="FSW Barber" width={120} height={18} />
         </Link>
 
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button size="icon" variant="outline">
-              <MenuIcon />
-            </Button>
-          </SheetTrigger>
-          <SidebarSheet />
-        </Sheet>
+        <div className="flex items-center gap-1">
+          <Navbar />
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button size={"icon"} variant={"outline"}>
+                <MenuIcon />
+              </Button>
+            </SheetTrigger>
+            <SidebarSheet />
+          </Sheet>
+        </div>
       </CardContent>
     </Card>
   )
