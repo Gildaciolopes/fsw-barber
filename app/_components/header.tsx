@@ -11,7 +11,7 @@ import { Navbar } from "./navbar"
 const Header = () => {
   return (
     <Card className="w-full rounded-none rounded-bl-xl rounded-br-xl">
-      <CardContent className="mx-auto flex max-w-[1200px] flex-row items-center justify-between p-5">
+      <CardContent className="mx-auto flex max-w-[1180px] flex-row items-center justify-between p-5">
         <Link href="/">
           <Image src="/Logo.svg" alt="FSW Barber" width={120} height={18} />
         </Link>

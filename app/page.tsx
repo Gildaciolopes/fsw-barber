@@ -37,8 +37,8 @@ const Home = async () => {
       <Header />
 
       <div className="bg-[url('/background.svg')] bg-no-repeat lg:bg-cover lg:py-14">
-        <div className="w-full p-5 lg:m-auto lg:flex lg:w-[1146px] lg:max-w-[96%] lg:gap-32 lg:p-0">
-          <div className="md:w-[10%]: lg:w-[35%] lg:flex-1">
+        <div className="w-full p-3 lg:m-auto lg:flex lg:gap-12 lg:pl-3 lg:pr-8 xl:max-w-[1146px] xl:gap-20 xl:p-0">
+          <div className="md:w-[10%]: mt-3 lg:mt-0 lg:w-[35%] lg:flex-1">
             {/* TEXTO */}
             <h2 className="text-xl font-bold lg:text-2xl">
               Olá, {session?.user ? session.user.name : "bem vindo"}!
@@ -59,7 +59,7 @@ const Home = async () => {
             </div>
 
             {/* BUSCA RÁPIDA */}
-            <div className="mt-6 flex gap-3 overflow-x-scroll lg:hidden [&::-webkit-scrollbar]:hidden">
+            <div className="mt-3 flex gap-3 overflow-x-scroll lg:hidden [&::-webkit-scrollbar]:hidden">
               {quickSearchOptions.map((option) => (
                 <Button
                   className="gap-2 text-sm"
@@ -117,7 +117,7 @@ const Home = async () => {
           </div>
 
           <div className="w-full lg:w-[596px]">
-            <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400 lg:text-sm">
+            <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400 lg:mt-0 lg:text-sm">
               Recomendados
             </h2>
 
@@ -126,7 +126,7 @@ const Home = async () => {
                 {barbershops.map((barbershop) => (
                   <CarouselItem
                     key={barbershop.id}
-                    className="basis-1/1 md:basis-1/3 lg:basis-2/5"
+                    className="basis-1/1 md:basis-1/3 lg:basis-1/3 xl:basis-2/6"
                   >
                     <BarbershopItem barbershop={barbershop} />
                   </CarouselItem>
@@ -139,8 +139,8 @@ const Home = async () => {
         </div>
       </div>
 
-      <div className="p-5 lg:m-auto lg:w-[1146px] lg:max-w-[96%] lg:p-0 lg:py-8">
-        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400 lg:text-sm">
+      <div className="p-3 lg:m-auto lg:w-[1146px] lg:max-w-[96%] lg:p-0 lg:py-8 lg:pr-1 xl:pr-0">
+        <h2 className="mb-3 text-xs font-bold uppercase text-gray-400 lg:text-sm">
           Populares
         </h2>
 
