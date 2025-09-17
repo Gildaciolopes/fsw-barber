@@ -10,6 +10,7 @@ import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog"
 import { signOut, useSession } from "next-auth/react"
 import { Avatar, AvatarImage } from "./ui/avatar"
 import SignInDialog from "./sign-in-dialog"
+import LoginAlert from "./login-alert"
 
 const SidebarSheet = () => {
   const { data } = useSession()
@@ -58,12 +59,23 @@ const SidebarSheet = () => {
             </Link>
           </Button>
         </SheetClose>
-        <Button className="justify-start gap-2" variant="ghost" asChild>
-          <Link href="/bookings">
-            <CalendarIcon size={18} />
-            Agendamentos
-          </Link>
-        </Button>
+        {data?.user ? (
+          <SheetClose asChild>
+            <Button className="justify-start gap-2" variant="ghost" asChild>
+              <Link href="/bookings">
+                <CalendarIcon size={18} />
+                Agendamentos
+              </Link>
+            </Button>
+          </SheetClose>
+        ) : (
+          <LoginAlert>
+            <Button className="justify-start gap-2" variant="ghost">
+              <CalendarIcon size={18} />
+              Agendamentos
+            </Button>
+          </LoginAlert>
+        )}
       </div>
 
       <div className="flex flex-col gap-2 border-b border-solid py-5">
