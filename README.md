@@ -4,7 +4,7 @@
 
 Meu objetivo é criar uma aplicação web que permita agendar serviços de várias barbearias de forma simples e eficiente, facilitando a vida dos clientes e dos barbeiros. O sistema permite que os usuários encontrem barbearias, visualizem serviços disponíveis, façam reservas e gerenciem seus agendamentos diretamente do celular.
 
-- O Website está disponível em `EM BREVE`.
+- O Website está disponível em `https://fsw-barber-gules-five.vercel.app`.
 
 <br/>
 
