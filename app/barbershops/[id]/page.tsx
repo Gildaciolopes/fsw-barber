@@ -109,7 +109,7 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 lg:flex-col lg:rounded-lg lg:bg-card lg:px-5 lg:py-3">
+            <div className="mx-auto flex max-w-[300px] flex-col items-center gap-2 rounded-lg bg-card px-5 py-3">
               <div className="flex items-center gap-2">
                 <StarIcon className="fill-primary text-primary" size={18} />
                 <p className="text-sm lg:text-xl">{averageDisplay}</p>

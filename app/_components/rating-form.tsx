@@ -63,30 +63,39 @@ export default function RatingForm({
 
   return (
     <form onSubmit={submit} className="space-y-3">
-      <div className="flex items-center gap-2">
-        {[5, 4, 3, 2, 1].map((n) => (
-          <button
-            key={n}
-            type="button"
-            onClick={() => setScore(n)}
-            className={`rounded px-2 py-1 text-sm ${score === n ? "bg-primary font-semibold text-white" : "bg-gray-200 font-semibold text-gray-500"}`}
-          >
-            {n}
-          </button>
-        ))}
+      <div>
+        <span className="sr-only">Escolha uma nota</span>
+        <div className="flex items-center justify-center gap-3 md:gap-2">
+          {[5, 4, 3, 2, 1].map((n) => (
+            <button
+              key={n}
+              type="button"
+              onClick={() => setScore(n)}
+              aria-pressed={score === n}
+              className={`flex h-10 w-10 items-center justify-center rounded-md text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-primary/50 ${
+                score === n
+                  ? "bg-primary text-white shadow-md"
+                  : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"
+              } md:h-8 md:w-8 md:px-2 md:py-1`}
+            >
+              {n}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div>
         <textarea
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-          className="w-full rounded border p-2 text-sm font-semibold text-black"
+          rows={3}
+          className="w-full rounded-md border border-zinc-700 bg-zinc-900 p-3 text-sm text-zinc-100 placeholder-zinc-500 shadow-sm focus:border-primary focus:ring-1 focus:ring-primary/30"
           placeholder="Comentário (opcional)"
         />
       </div>
 
       <div>
-        <Button type="submit" disabled={loading}>
+        <Button type="submit" disabled={loading} className="w-full">
           {loading ? "Enviando..." : "Enviar avaliação"}
         </Button>
       </div>
