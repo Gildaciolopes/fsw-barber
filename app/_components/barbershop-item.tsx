@@ -1,4 +1,4 @@
-import { Barbershop } from "@prisma/client"
+import { Barbershop, Rating } from "@prisma/client"
 import { Card, CardContent } from "./ui/card"
 import Image from "next/image"
 import { Button } from "./ui/button"
@@ -7,10 +7,16 @@ import { StarIcon } from "lucide-react"
 import Link from "next/link"
 
 interface BarbershopItemProps {
-  barbershop: Barbershop
+  barbershop: Barbershop & { ratings?: Rating[] }
 }
 
 const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
+  const ratings = barbershop.ratings ?? []
+  const ratingCount = ratings.length
+  const average = ratingCount
+    ? ratings.reduce((acc, r) => acc + (r.score ?? 0), 0) / ratingCount
+    : 0
+  const averageDisplay = average ? average.toFixed(1).replace(".", ",") : "0,0"
   return (
     <Card className="min-w-[167px] rounded-2xl">
       <CardContent className="p-0 px-1 pt-1">
@@ -28,7 +34,7 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
             variant="secondary"
           >
             <StarIcon size={12} className="fill-primary text-primary" />
-            <p className="text-xs font-semibold">5,0</p>
+            <p className="text-xs font-semibold">{averageDisplay}</p>
           </Badge>
         </div>
 
