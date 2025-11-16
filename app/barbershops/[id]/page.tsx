@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { BarbershopInfo } from "@/app/_components/barbershop-info"
 import Header from "@/app/_components/header"
 import PhoneItem from "@/app/_components/phone-item"
@@ -12,10 +13,13 @@ import {
   TableRow,
 } from "@/app/_components/ui/table"
 import { db } from "@/app/_lib/prisma"
+import { getServerSession } from "next-auth"
+import { authOptions } from "@/app/_lib/auth"
 import { ChevronLeftIcon, MapPinIcon, MenuIcon, StarIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import RatingForm from "@/app/_components/rating-form"
 
 interface BarbershopPageProps {
   params: {
@@ -24,14 +28,29 @@ interface BarbershopPageProps {
 }
 
 const BarbershopPage = async ({ params }: BarbershopPageProps) => {
-  const barbershop = await db.barbershop.findUnique({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const barbershop = (await (db as any).barbershop.findUnique({
     where: {
       id: params.id,
     },
     include: {
       services: true,
+      ratings: true,
     },
-  })
+  })) as any
+
+  const session = await getServerSession(authOptions)
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const ratings: { score: number; userId: string; comment?: string }[] =
+    (barbershop?.ratings ?? []) as any
+  const ratingCount = ratings.length
+  const average = ratingCount
+    ? ratings.reduce((acc: number, r) => acc + (r.score ?? 0), 0) / ratingCount
+    : 0
+  const averageDisplay = average ? average.toFixed(1).replace(".", ",") : "0,0"
+  const userId = (session?.user as any)?.id as string | undefined
+  const userRating = ratings.find((r) => r.userId === userId)
 
   if (!barbershop) {
     return notFound()
@@ -93,9 +112,18 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
             <div className="flex items-center gap-2 lg:flex-col lg:rounded-lg lg:bg-card lg:px-5 lg:py-3">
               <div className="flex items-center gap-2">
                 <StarIcon className="fill-primary text-primary" size={18} />
-                <p className="text-sm lg:text-xl">5,0</p>
+                <p className="text-sm lg:text-xl">{averageDisplay}</p>
               </div>
-              <p className="text-sm">(499 avaliações)</p>
+              <p className="text-sm">({ratingCount} avaliações)</p>
+              {session ? (
+                <div className="mt-3 w-full lg:w-auto">
+                  <RatingForm
+                    barbershopId={barbershop.id}
+                    initialScore={userRating?.score ?? null}
+                    initialComment={userRating?.comment ?? null}
+                  />
+                </div>
+              ) : null}
             </div>
           </div>
 
@@ -112,7 +140,7 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
             </h2>
 
             <div className="space-y-3 md:grid md:grid-cols-2 md:gap-3 md:space-y-0">
-              {barbershop.services.map((service) => (
+              {barbershop.services.map((service: any) => (
                 <ServiceItem
                   key={service.id}
                   service={JSON.parse(JSON.stringify(service))}
@@ -146,7 +174,7 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
               Contato
             </h2>
 
-            {barbershop.phones.map((phone, index) => (
+            {barbershop.phones.map((phone: any, index: number) => (
               <PhoneItem key={index} phone={phone} />
             ))}
           </div>
