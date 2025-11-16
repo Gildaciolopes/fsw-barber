@@ -22,6 +22,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   bookings      Booking[]
+  ratings       Rating[]
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 }
@@ -75,6 +76,7 @@ model Barbershop {
   createdAt   DateTime            @default(now())
   updatedAt   DateTime            @updatedAt
   services    BarbershopService[]
+  ratings     Rating[]
 }
 
 model BarbershopService {
@@ -97,4 +99,18 @@ model Booking {
   date      DateTime
   createdAt DateTime          @default(now())
   updatedAt DateTime          @updatedAt
+}
+
+model Rating {
+  id            String      @id @default(uuid())
+  score         Int
+  comment       String?
+  userId        String
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  barbershopId  String
+  barbershop    Barbershop  @relation(fields: [barbershopId], references: [id], onDelete: Cascade)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@unique([userId, barbershopId])
 }

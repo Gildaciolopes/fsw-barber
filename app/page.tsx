@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image"
 import { db } from "./_lib/prisma"
 import Link from "next/link"
@@ -23,11 +24,29 @@ import {
 
 const Home = async () => {
   const session = await getServerSession(authOptions)
-  const barbershops = await db.barbershop.findMany({})
-  const popularBarbershops = await db.barbershop.findMany({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const barbershops = await (db as any).barbershop.findMany({
+    include: { ratings: true },
+  })
+
+  // Order recommended barbershops by average rating (desc)
+  const barbershopsWithAvg = barbershops
+    .map((b: any) => {
+      const ratings = b.ratings ?? []
+      const count = ratings.length
+      const avg = count
+        ? ratings.reduce((acc: number, r: any) => acc + (r.score ?? 0), 0) /
+          count
+        : 0
+      return { ...b, _avg: avg }
+    })
+    .sort((a: any, b: any) => (b._avg ?? 0) - (a._avg ?? 0))
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const popularBarbershops = await (db as any).barbershop.findMany({
     orderBy: {
       name: "desc",
     },
+    include: { ratings: true },
   })
   const confirmedBookings = await getConfirmedBookings()
 
@@ -123,7 +142,7 @@ const Home = async () => {
 
             <Carousel opts={{ align: "start" }}>
               <CarouselContent className="">
-                {barbershops.map((barbershop) => (
+                {barbershopsWithAvg.map((barbershop: any) => (
                   <CarouselItem
                     key={barbershop.id}
                     className="basis-1/1 md:basis-1/3 lg:basis-1/3 xl:basis-2/6"
@@ -146,7 +165,7 @@ const Home = async () => {
 
         <Carousel opts={{ align: "start" }}>
           <CarouselContent>
-            {popularBarbershops.map((barbershop) => (
+            {popularBarbershops.map((barbershop: any) => (
               <CarouselItem
                 key={barbershop.id}
                 className="basis-1/1 md:basis-1/3 lg:basis-1/4 xl:basis-1/5"
